@@ -1,17 +1,27 @@
 import React from "react";
 import searchIcon from "../assets/Search.svg";
 
-const Header = () => {
+const Header = ({ searchTerm = "", setSearchTerm }) => {
+  const searchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="navbar">
       <div className="logo-and-input">
         <h1>Movies</h1>
-        <form action="">
+        <form onSubmit={handleSearch} action="">
           <img src={searchIcon} alt="search icon" />
           <input
             type="search"
             placeholder="Search for movies and more..."
-            name="movieName"
+            value={searchTerm}
+            onChange={searchChange}
+            name="search"
           />
           <button>Search</button>
         </form>

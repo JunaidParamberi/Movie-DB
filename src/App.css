@@ -11,6 +11,7 @@ body {
 
 .App{
   background: #24323F;
+  min-height: 100vh;
 
 }
 
@@ -87,15 +88,15 @@ body {
 
 .movie-card {
   background-color: #FFF;
- display: flex;
- flex-direction: column;
+  display: flex;
+  flex-direction: column;
   flex-shrink: 0;
   padding: 20px 20px ;
   width: 210px ;
   
   border-radius: 10px;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
 }
 
@@ -104,6 +105,7 @@ body {
   height: 322px;
   border-radius: 10px;
 }
+
 
 .movie-card p{
   color: #5A5A5A;
@@ -120,8 +122,10 @@ body {
   font-size: 16px;
   font-style: normal;
   font-weight: 800;
-  line-height: 16px; /* 100% */
-  letter-spacing: 0.267px;
+  text-overflow: ellipsis;
+  max-width: 210px;
+  overflow: hidden;
+  white-space: nowrap; 
 }
 
 .movie-card h2{
@@ -159,7 +163,7 @@ letter-spacing: 0.267px;
   flex-wrap: wrap;
   flex-grow: 1;
   gap: 20px;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   padding: 10px 60px;
 }
