@@ -6,8 +6,10 @@ const Header = ({ searchTerm = "", setSearchTerm }) => {
     setSearchTerm(event.target.value);
   };
 
-  const handleSearch = (e) => {
-    e.preventDefault();
+  const handleSearch = (event) => {
+    event.preventDefault();
+    const newSearchTerm = event.target.elements.search.value;
+    setSearchTerm(newSearchTerm);
   };
 
   return (
